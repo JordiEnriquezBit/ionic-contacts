@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #checkoutForm="ngForm"> 
+  <div id="top">
+    <ion-button (click)="dismissModal()">Close</ion-button>
+    <h2>New Contact</h2>
+    <ion-button type="submit" (click)="dismiss()" [disabled]="!checkoutForm.valid">Add</ion-button>
+  </div>
+  <div id="image-profile">
+    <ion-img [src]="person.image"></ion-img>
+
+    <ion-label (click)="addPhotoToGallery()">ADD PHOTO</ion-label>
+  </div>
+    <ion-item>
+      <ion-label>First name</ion-label>
+      <ion-input type="text" [(ngModel)]="person.firstName" name="firstName" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last name</ion-label>
+      <ion-input type="text" [(ngModel)]="person.lastName" name="lastName" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input [(ngModel)]="person.email" name="email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Phone</ion-label>
+      <ion-input type="number" [(ngModel)]="person.phone" name="phone" required></ion-input>
+    </ion-item>
+  </form>
+</ion-content>
