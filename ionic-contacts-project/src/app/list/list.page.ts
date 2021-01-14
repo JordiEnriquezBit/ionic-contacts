@@ -43,6 +43,5 @@ export class ListPage implements OnInit {
     const { data } = await modal.onWillDismiss();
     this.item = data.person;
     this.contacts.push(data.person)
-    console.log(data);
   }
 }

@@ -5,11 +5,11 @@
 </ion-header>
 
 <ion-content>
-  <form #checkoutForm="ngForm"> 
+  <form  [formGroup]="formGroup"> 
   <div id="top">
     <ion-button (click)="dismissModal()">Close</ion-button>
     <h2>New Contact</h2>
-    <ion-button type="submit" (click)="dismiss()" [disabled]="!checkoutForm.valid">Add</ion-button>
+    <ion-button type="submit" (click)="dismiss()" [disabled]="formGroup.invalid">Add</ion-button>
   </div>
   <div id="image-profile">
     <ion-img [src]="person.image"></ion-img>
@@ -18,19 +18,19 @@
   </div>
     <ion-item>
       <ion-label>First name</ion-label>
-      <ion-input type="text" [(ngModel)]="person.firstName" name="firstName" required></ion-input>
+      <ion-input formControlName="firstName" name="firstName"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Last name</ion-label>
-      <ion-input type="text" [(ngModel)]="person.lastName" name="lastName" required></ion-input>
+      <ion-input  formControlName="lastName" name="lastName"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Email</ion-label>
-      <ion-input [(ngModel)]="person.email" name="email" required></ion-input>
+      <ion-input formControlName="email" name="email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Phone</ion-label>
-      <ion-input type="number" [(ngModel)]="person.phone" name="phone" required></ion-input>
+      <ion-input type="number" formControlName="phone" name="phone"></ion-input>
     </ion-item>
   </form>
 </ion-content>
