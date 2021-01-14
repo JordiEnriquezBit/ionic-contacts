@@ -22,7 +22,6 @@ export class FormPage implements OnInit {
     // componentProps can also be accessed at construction time using NavParams
     this.person = navParams.get("person");
     this.buildForm();
-    //console.log(navParams.get('person'));
   }
 
   ngOnInit() {
